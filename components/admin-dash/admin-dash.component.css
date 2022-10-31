@@ -1,0 +1,157 @@
+
+
+
+.input{
+       /* border: solid 3px black; */
+       /* width:10rem; */
+       /* height: 32px;
+       margin: 2px;
+       border-radius: 10px;
+       background: transparent; */
+       width: 50%;
+       height: 29px;
+       /* margin-left: 60rem; */
+       margin-top: 2rem;
+       border-radius: 5rem;
+        border: solid 1px #34495E;
+ }
+
+ .input:focus{
+      border: solid 1px #34495E;
+}
+ 
+ 
+ .form{
+       width:60rem;
+      
+ }
+
+
+ .btn1{
+     
+     border: transparent;
+     color: gray;
+     margin-left: -4.5rem;
+      
+ }
+ 
+ h1{
+       text-align: center;
+       color:#34495E; 
+       font-family: 'Vollkorn', serif;
+ }
+ 
+ table{
+       font-family: 'Vollkorn', serif;   
+ }
+ .pagination1{
+      margin-left: 30%;
+      margin-top: 30px;
+      
+ }
+ .pagination .a{
+       border: solid 1px #34495E;
+      color: #34495E; 
+ }
+ .next{
+       background-color: #34495E;
+       color: aliceblue;
+ }
+ .pree{
+       background-color: #34495E;
+       color: aliceblue; 
+ }
+ .fullpage{
+      
+       height: 90%;
+       background-color: #e3f2fd;
+       width: 80%;
+       margin-left: 10%;
+       box-shadow: 1px 5px 9px #34495E ;
+       margin-top: 1%;
+
+ }
+
+ .btnstyle{
+      border: solid 2px #34495E ;
+     border-radius: 26px;
+     width: 40px;
+     height: 40px;
+     margin: 2px;
+    
+     
+       
+  }
+  .btnstyle:hover{
+      background-color:#34495E;
+  }
+
+  .btnstyle:focus{
+      background-color:#34495E;
+  }
+
+  .class{
+      margin-top: 3%;
+      margin-left: 45%;
+      margin-bottom: 3rem;
+  }
+
+  #overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background: #999;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      z-index: 100;
+  }
+
+  #popup {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: #fff;
+      width: 500px;
+      height: 500px;
+      margin-left: -250px; /*Half the value of width to center div*/
+      margin-top: -250px; /*Half the value of height to center div*/
+      z-index: 200;
+  }
+
+  #popupclose {
+      float: right;
+      padding: 10px;
+      cursor: pointer;
+  }
+
+  .inputFile{
+       width:20rem;
+       border-radius: 15px;
+  }
+
+  .btnApload{
+      font-size: 13px;
+
+     
+  }
+
+.bar{
+    width:30%;
+    margin-top: 20px;
+    padding-bottom: 20rem;
+ 
+}
+  
+.form-select{
+    width: 30%;
+    margin-left: 20%;
+ 
+}
+
+c-chart{
+   margin-left: 
+   50%; 
+   width: 20rem;
+   height: 20rem;
+}

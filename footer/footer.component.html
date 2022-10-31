@@ -1,0 +1,16 @@
+<p>upload works!</p>
+<form (submit)="onupload(upload)" #upload="ngForm">
+  <input
+    type="text"
+    name="name"
+    ngModel
+    matInput
+    placeholder="name"
+    #nameInput="ngModel"
+    required
+  />
+
+  <br />
+  <input #singleInput type="file" name="file" (change)="selectImage($event)" />
+  <button mat-raised-button color="primary" type="submit">Register</button>
+</form>

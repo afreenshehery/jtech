@@ -1,0 +1,75 @@
+
+mat-form-field
+{
+      
+  width: 90%;
+
+
+  
+}
+
+ form{
+       box-shadow: 10px 10px 8px #888888;
+ }
+mat-spinner {
+  margin: auto;
+}
+mat-card{
+       
+      /* border: solid #34495E; */
+   
+      width: 30%;
+      margin-left: 35%;
+      
+     
+      background-color: #e3f2fd;
+      
+}
+h1{
+     
+      width: 20%;
+      height: 5rem;
+      font-size: 3rem;
+      text-align: center;
+      margin-left: 40%;
+      color: #34495E; 
+
+}
+.login{
+       
+      background-color:  #34495E;   
+      color:#e3f2fd ;
+      
+}
+.back{
+      width: 30%;
+      background-color:   #34495E; ;  
+      margin-top: 2%; 
+      margin-left: 35%; 
+      color:#e3f2fd ;
+}
+.hee{
+      width: 20px;
+      height: 50px;
+      background-color: aqua;
+}
+
+agm-map {
+      height: 300px;
+    }
+
+
+    .page{
+
+      
+      width: 100%;
+      height: 50%;
+      background-color: #e3f2fd;
+      padding-top: 10rem;
+     
+    }
+
+    input{
+      
+      color: #34495E; 
+    }

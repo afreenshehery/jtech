@@ -1,0 +1,41 @@
+<div class="page">
+  <!-- <h1>logIn</h1> -->
+  <mat-card style="margin-top: -29rem !important">
+    <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
+      <mat-form-field>
+        <input
+          matInput
+          required
+          Email
+          name="Email"
+          ngModel
+          type="Email"
+          placeholder="email or phone number"
+          #Email="ngModel"
+        />
+        <mat-error *ngIf="Email.invalid">Please enter a valid email.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          type="text"
+          required
+          Password
+          name="Password"
+          ngModel
+          matInput
+          placeholder="Password"
+          #Password="ngModel"
+        />
+        <mat-error *ngIf="Password.invalid"
+          >Please enter a valid emial.</mat-error
+        >
+      </mat-form-field>
+
+      <button class="login" mat-raised-button type="submit">Login</button>
+    </form>
+  </mat-card>
+  <!-- <button class="back" mat-raised-button type="submit" [routerLink]="['']">
+    Back
+  </button> -->
+</div>

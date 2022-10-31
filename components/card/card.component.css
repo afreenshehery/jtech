@@ -1,0 +1,39 @@
+.container{
+    width: 50%;
+}
+
+
+.card{
+    height: 200px;
+    margin:25px;
+    padding: 25px;
+    }
+    .center{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+    #color{
+    background-color:#F52887 ;
+    }
+
+    .conform{
+        width: 200px;
+    }
+    
+    .qut{
+        width: 10rem;
+        border: solid 2px red;
+        border-radius: 15px;
+    }
+
+    .qut .sam{
+        width: 40px;
+        border: none;
+        background-color: transparent;
+        
+    }
+
+  

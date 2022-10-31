@@ -1,0 +1,61 @@
+
+mat-form-field
+{
+  width: 100%;
+  
+}
+/* input{
+      border: solid palegreen;
+} */
+
+mat-spinner {
+  margin: auto;
+}
+form{
+       box-shadow: 10px 10px 8px #888888;
+ }
+mat-card{
+      /* border: solid #34495E; */
+      /* box-shadow: 10px 10px 8px 10px #888888; */
+      width: 30%;
+      margin-left: 35%;
+      margin-top: 10%;
+}
+h1{
+     
+      width: 20%;
+      height: 5rem;
+      font-size: 3rem;
+      text-align: center;
+      margin-left: 40%;
+      color: #34495E; 
+
+}
+.login{
+      background-color:  #34495E; 
+      color:#e3f2fd ;   
+}
+.back{
+      width: 30%;
+      background-color:  #34495E;  
+      color:#e3f2fd ;
+      margin-top: 2%; 
+      margin-left: 35%; 
+}
+.hee{
+      width: 20px;
+      height: 50px;
+      background-color: aqua;
+}
+
+agm-map {
+      height: 300px;
+    }
+
+    .page{
+      width: 100%;
+      height: 50%;
+      background-color: #e3f2fd;
+      padding-top: 15px;
+     
+    }

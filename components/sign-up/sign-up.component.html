@@ -1,0 +1,69 @@
+<div class="page">
+  <!-- <h1 class="baground-color :primary">signUp</h1> -->
+
+  <mat-card style="margin-top: -29rem !important"
+    >>
+    <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
+      <mat-form-field>
+        <input
+          matInput
+          required
+          Name
+          name="Name"
+          ngModel
+          type="text"
+          placeholder="Name"
+          #Name="ngModel"
+        />
+        <mat-error *ngIf="Name.invalid">Please enter a valid emial.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          required
+          Contact
+          name="Contact"
+          ngModel
+          type="text"
+          placeholder="Contact"
+          #Contact="ngModel"
+        />
+        <mat-error *ngIf="Contact.invalid"
+          >Please enter a valid ContactNumber.</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          required
+          Email
+          name="Email"
+          ngModel
+          type="email"
+          placeholder="Email or Phone number"
+          #Email="ngModel"
+        />
+        <mat-error *ngIf="Email.invalid">Please enter a valid emial.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          type="text"
+          required
+          Password
+          name="Password"
+          ngModel
+          matInput
+          placeholder="Password"
+          #Password="ngModel"
+        />
+        <mat-error *ngIf="Password.invalid"
+          >Please enter a valid emial.</mat-error
+        >
+      </mat-form-field>
+
+      <button class="login" mat-raised-button type="submit">sigUp</button>
+    </form>
+  </mat-card>
+</div>

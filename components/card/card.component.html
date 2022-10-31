@@ -1,0 +1,98 @@
+<div *ngIf="cart.length != 0 && !show">
+  <div class="container">
+    <div class="card-table">
+      <div class="cart-products">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <!-- <th>Sr.No</th> -->
+              <!-- <th scope="col">Sr.No</th> -->
+              <th>Name</th>
+
+              <th>Quantity</th>
+              <th>price</th>
+              <th>image</th>
+              <th>delete</th>
+              <!-- <th>Quantity</th> -->
+              <!-- <th>total</th> -->
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of cart">
+            <tr>
+              <!-- <td scope="row">{{item.id}}</td> -->
+              <td>{{ item.name }}</td>
+
+              <th>
+                <input
+                  type="button"
+                  value="-"
+                  (click)="QuantityRemove(item.productId)"
+                />
+                <input type="button" value="{{ item.quantity }}" />
+                <input
+                  type="button"
+                  value="+"
+                  (click)="QuantityAdd(item.productId)"
+                />
+              </th>
+              <td>{{ item.price }}</td>
+              <td><img src="{{ item.image }}" width="200" /></td>
+
+              <th>
+                <i
+                  class="fa fa-remove"
+                  style="font-size: 20px; color: red"
+                  (click)="onDelete(item.id)"
+                >
+                </i>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        <h1>Cart Total:{{ total }}</h1>
+        <button type="button" class="btn btn-success" (click)="placeorder()">
+          Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="show">
+  <div class="card conform" style="width: 25rem; height: 25rem">
+    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+    <div class="card-body">
+      <h1 class="card-title">Order Details</h1>
+      <h4 class="card-title">Total:{{ total }}</h4>
+      <h4>shipping charges:100</h4>
+      <h4>Grand Total:{{ grandtotal }}</h4>
+      <button
+        type="button"
+        class="btn btn-success"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+        (click)="ordered()"
+      >
+        confirm order
+      </button>
+    </div>
+  </div>
+</div>
+<div *ngIf="cart.length == 0">
+  <div class="container">
+    <div class="card">
+      <!-- <h5 class="card-title">my Cart</h5> -->
+    </div>
+    <div class="center">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkNONcClZXKbZNC_XZH4AnHIH2Bo_FeCsQop_vLBuZXIsdOeMoMkBvm-01C6R3i0UQZwE&usqp=CAU"
+        alt=""
+      />
+      <h3>your cart is empty</h3>
+      <h4>This feels too light! Go on, add all your favourites</h4>
+      <button id="color" class="btn btn-primary" routerLink="/Blush">
+        shop Now
+      </button>
+    </div>
+  </div>
+</div>

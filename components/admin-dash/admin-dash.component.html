@@ -1,0 +1,222 @@
+<div class="fullpage cart">
+  <h1 class="h1">Order Details</h1>
+
+  <form class="form" (submit)="search(signupForm)" #signupForm="ngForm">
+    <!-- <mat-label>Search</mat-label> -->
+
+    <input
+      class="input"
+      matInput
+      type="text"
+      name="Name"
+      ngModel
+      placeholder="Search"
+      #dobInput="ngModel"
+      style="margin-left: 17%; width: 50%"
+    />
+    <button class="btn btn1" type="submit">
+      <i class="fa fa-search" style="font-size: 24px"></i>
+    </button>
+    <button
+      mat-raised-button
+      type="button"
+      class="btn btnApload"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Apload file
+    </button>
+  </form>
+
+  <!-- .................. -->
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Costumer.Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">product price</th>
+        <th scope="col">product image</th>
+        <th scope="col">status</th>
+        <th scope="col">Edit</th>
+        <th scope="col">delete</th>
+
+        <th scope="col">Ordetr Date</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let Admin of store; let sr = index">
+      <tr>
+        <td>{{ sr + 1 }}</td>
+        <td>{{ Admin.customerid }}</td>
+        <td>{{ Admin.name }}</td>
+        <td>{{ Admin.price }}</td>
+        <td><img src="{{ Admin.image }}" alt="" style="width: 6rem" /></td>
+        <td style="color: green">{{ Admin.Status }}</td>
+
+        <td class="btn-link" [routerLink]="['/singUpEdite', Admin.id]">Edit</td>
+
+        <td class="btn" (click)="deleteuser(Admin.id)">delete</td>
+        <td>
+          <tr *ngFor="let Admin1 of store1">
+            <div *ngIf="Admin1.id == Admin.orderid">
+              <td>
+                {{ Admin1.Date | date: "medium" }}
+              </td>
+            </div>
+          </tr>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <div *ngIf="noprojectFound">
+      <h1 style="text-align: center">
+        no project found <br /><i
+          class="far fa-frown"
+          style="font-size: 38px; color: red"
+        ></i>
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col d-flex">
+    <div class="form-inline">
+      <!-- salect list per page
+      <select
+        class="form-select"
+        value="limit"
+        (change)="changePageSize($event)"
+      >
+        <option selected>Default page</option>
+        <option value="2">2 PER PAGE</option>
+        <option value="4">4 PER PAGE</option>
+        <option value="8">8 PER PAGE</option>
+      </select> -->
+    </div>
+    <div class="class float-right">
+      <button
+        class="btnstyle"
+        *ngFor="let page of array"
+        (click)="changePage(page)"
+      >
+        {{ page }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Apload Orders</h1>
+      </div>
+      <div class="modal-body">
+        <form class="fileForm" (submit)="onupload(upload)" #upload="ngForm">
+          <input
+            class="inputFile"
+            type="text"
+            name="name"
+            ngModel
+            matInput
+            placeholder="File Name"
+            #nameInput="ngModel"
+            required
+          />
+
+          <br />
+          <input
+            class="inputFile"
+            #singleInput
+            type="file"
+            name="file"
+            (change)="selectImage($event)"
+          />
+          <br />
+          <div class="modal-footer">
+            <button mat-raised-button class="btn btn-secondary">
+              Register
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<h1>fff</h1>
+<div class="bar">
+  <!-- <ng-template> -->
+  <!-- <select class="form-select" #item1 (change)="selectFilter(item1.value)">
+    <option selected>progress by</option>
+    <option value="today">today</option>
+    <option value="this week">this week</option>
+    <option value="last week">last week</option>
+
+    <option value="current month">current month</option>
+    <option value="last month">last month</option>
+    <option value="current quarter">current quarter</option>
+
+    <option value="last quarter">last quarter</option>
+    <option value="current year">current year</option>
+    <option value="last year">last year</option>
+  </select>
+  <c-chart [data]="data" type="bar"></c-chart>
+</div> -->
+
+  <p-dropdown
+    [options]="groupDates"
+    [(ngModel)]="filters.selectedDates"
+    placeholder="Select a date"
+    [group]="true"
+    (onChange)="Fetchdetails()"
+  >
+    <ng-template let -group pTemplate="group"> </ng-template>
+  </p-dropdown>
+  <c-chart [data]="data" type="bar"></c-chart>
+
+  <!-- today
+this week
+last week
+current month   
+last month
+current quarter
+last quarter
+current year
+last year -->
+
+  <!-- const SUM = await OrdersModel.sum('price', {
+  where: {
+    created: TODAY,
+  },
+}); -->
+
+  <!-- const moment = require('moment');
+const Op = require('sequelize').Op;
+const SUM = await OrdersModel.sum('price', {
+    where : {
+                created_at : { [Op.gt] : moment().format('YYYY-MM-DD 00:00')},
+                created_at : { [Op.lte] : moment().format('YYYY-MM-DD 23:59')}
+            },
+});
+console.log(SUM); -->
+</div>
